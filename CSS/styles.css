@@ -249,9 +249,132 @@ img {
   color: var(--title-color);
 }
 
+.nav__logo-circle,
+.nav__toggle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: grid;
+  place-items: center;
+}
+
+.nav__logo-circle {
+  border-radius: 50%;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
 /* Navigation for mobile devices */
+@media screen and (width <= 1150px) {
+  /* Bedimcode styles */
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: #00000073;
+    width: 100%;
+    padding-block: 1.8rem 5rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.nav__title,
+.nav__name,
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__title {
+  display: block;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 3.5rem;
+}
+
+.nav__name {
+  position: relative;
+  width: max-content;
+
+  /* top:0; right & left: auto; bottom:3rem; 
+   since left isn't specified it'll be set to auto following the right */
+  margin: 0 auto 3rem;
+
+  font-size: var(--h2-font-size);
+}
+
+.nav__name::after,
+.nav__name::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: var(--text-color-light);
+  position: absolute;
+  top: 50%;
+  left: -3rem;
+}
+
+.nav__name::before {
+  /* So, left: initial; is used here to
+  reset the left property to its default value
+  if you remove the left: initial; the right property won't
+  have any effect cuz the prev left still applied */
+  left: initial;
+
+  right: -3rem;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  position: relative;
+  color: var(--text-color-light);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.3s ease-in-out;
+}
+
+.nav__link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--white-color);
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--white-color);
+}
+
+.nav__link:hover::after {
+  width: 30%;
+}
+
+.nav__close {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
 
 /* Show menu */
+.show-menu {
+  transform: translateY(0%);
+}
 
 /* Add shadow header */
 
