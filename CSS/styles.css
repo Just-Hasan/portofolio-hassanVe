@@ -381,8 +381,143 @@ img {
 /* Active link */
 
 /*=============== HOME ===============*/
+.home__container {
+  padding-top: 2rem;
+}
+
+.home__name {
+  font-size: var(--biggest-font-size);
+}
+
+.home__hasan {
+  position: relative;
+  justify-self: center;
+}
+
+.home__image {
+  width: 220px;
+}
+
+.home-img {
+  position: relative;
+  z-index: 10;
+}
+
+.home__shadow {
+  width: 100%;
+  height: 100%;
+  background-color: var(--container-color);
+  position: absolute;
+  bottom: -0.75rem;
+  right: -0.75rem;
+  border: 4px solid var(--black-color);
+  z-index: -1;
+}
+
+.home__arrow,
+.home__line {
+  position: absolute;
+  filter: invert(1);
+  z-index: -3;
+}
+
+.home__arrow {
+  left: 40%;
+  bottom: -6rem;
+}
+
+.home__line {
+  right: -2rem;
+  bottom: -0.5rem;
+}
+
+.home__hasan .geometric-box {
+  top: 2.5rem;
+  left: -0.8rem;
+  z-index: 10;
+}
+
+.home__social {
+  height: max-content;
+  position: absolute;
+  left: -5rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.home__social-link {
+  background-color: var(--black-color-light);
+  color: var(--white-color);
+  font-size: 1.25rem;
+  padding: 6px;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.home__social-link:hover {
+  background-color: var(--black-color);
+}
+
+.home__info {
+  margin-top: 6rem;
+}
+
+.home_description {
+  text-align: center;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.home_description b {
+  background: linear-gradient(90deg, #fee7155b, hsl(0, 0%, 87%));
+}
+
+.home__scroll {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.home__scroll-text {
+  display: none;
+}
+
+.home__scroll-box {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.home__scroll-box i {
+  animation: scroll-down 2s infinite;
+}
 
 /* Animate scroll icon */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0.6rem);
+    opacity: 0;
+  }
+}
 
 /*=============== BUTTON ===============*/
 
