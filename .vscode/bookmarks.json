@@ -34,12 +34,17 @@
 					"label": "Projects-Section"
 				},
 				{
-					"line": 420,
+					"line": 411,
+					"column": 0,
+					"label": "CONTACT-SECTION"
+				},
+				{
+					"line": 530,
 					"column": 0,
 					"label": "Footer-Start"
 				},
 				{
-					"line": 424,
+					"line": 534,
 					"column": 1,
 					"label": ""
 				}
@@ -97,6 +102,11 @@
 					"line": 729,
 					"column": 0,
 					"label": "PROJECTS-SECTION"
+				},
+				{
+					"line": 826,
+					"column": 0,
+					"label": "Contact-Section"
 				}
 			]
 		}
