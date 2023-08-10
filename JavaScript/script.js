@@ -26,3 +26,14 @@ const navLinkCloseNavBar = () => {
 };
 
 navLink.forEach((link) => link.addEventListener("click", navLinkCloseNavBar));
+
+/* ----- SHADOW-HEADER ----- */
+const shadowHeader = function () {
+  const header = document.getElementById("header");
+
+  window.scrollY >= 50
+    ? header.classList.add("shadow-header")
+    : header.classList.remove("shadow-header");
+};
+
+this.addEventListener("scroll", shadowHeader);

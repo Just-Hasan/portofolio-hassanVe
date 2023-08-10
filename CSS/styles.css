@@ -191,8 +191,8 @@ img {
   height: 28px;
   background-color: hsla(14, 98%, 50%, 0.2);
   position: absolute;
-  top: -4px;
-  right: -8px;
+  top: -16px;
+  right: -16px;
 }
 
 .section__title-2::after {
@@ -377,6 +377,9 @@ img {
 }
 
 /* Add shadow header */
+.shadow-header {
+  box-shadow: 0 1px 16px hsla(0, 0%, 0%, 0.12);
+}
 
 /* Active link */
 
@@ -386,6 +389,7 @@ img {
 }
 
 .home__name {
+  text-align: center;
   font-size: var(--biggest-font-size);
 }
 
@@ -520,9 +524,140 @@ img {
 }
 
 /*=============== BUTTON ===============*/
+.button .button__ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+}
+
+.button {
+  background-color: var(--black-color);
+  padding: 1.1rem 1.5rem;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button i {
+  font-size: 1.25rem;
+}
+
+.button:hover {
+  background-color: var(--first-color);
+}
+
+.button__ghost {
+  border: 3px solid var(--black-color);
+  color: var(--black-color);
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.button__ghost i {
+  font-size: 1.25rem;
+}
+
+.button__ghost:hover {
+  border: 3px solid var(--first-color);
+}
 
 /*=============== ABOUT ===============*/
+.about {
+  background-color: var(--container-color);
+  transition: background-color 0.3s ease-in-out;
+}
 
+.about__container {
+  row-gap: 0;
+}
+
+.about__hasan {
+  position: relative;
+  justify-self: center;
+  /* Margin block, margin yang terdiri dari 2 shorthadn
+  margin-block-start(mengatur margin atas) dan margin-block-end (mengatur margin bawah) */
+  margin-block: 2.5rem 4.5rem;
+}
+
+.about__image {
+  width: 220px;
+}
+
+.about__img {
+  position: relative;
+  border: 4px solid var(--white-color);
+  z-index: 1;
+}
+
+.about__shadow,
+.about__line,
+.about__box {
+  position: absolute;
+}
+
+.about__shadow {
+  width: 150px;
+  height: 365px;
+  background-color: var(--body-color);
+  top: -3.5rem;
+  right: -3.5rem;
+  border-bottom: 4px solid var(--first-color);
+  transition: background-color 0.4s;
+}
+
+.about__hasan .geometric-box {
+  top: 1.5rem;
+  right: -2.8rem;
+}
+
+.about__line {
+  filter: invert(1);
+  right: -2rem;
+  top: 6rem;
+  width: 50px;
+}
+
+.about__box {
+  width: 40px;
+  height: 40px;
+  background-color: var(--first-color);
+  right: -0.5rem;
+  bottom: 1.5rem;
+}
+
+.about__info {
+  padding-left: 1.5rem;
+}
+
+.about__description {
+  position: relative;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.about__description::after {
+  content: "";
+  width: 20px;
+  background-color: var(--black-color);
+  height: 1px;
+  position: absolute;
+  top: 0.5rem;
+  left: -2.5rem;
+}
+
+.about__list {
+  list-style: square;
+  color: var(--title-color);
+  margin-bottom: 3rem;
+}
+
+.about__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
 /*=============== SERVICES ===============*/
 
 /*=============== PROJECTS ===============*/

@@ -14,12 +14,12 @@
 					"label": "Main-Start"
 				},
 				{
-					"line": 138,
+					"line": 194,
 					"column": 0,
 					"label": "Footer-Start"
 				},
 				{
-					"line": 142,
+					"line": 198,
 					"column": 1,
 					"label": ""
 				}
@@ -59,9 +59,14 @@
 					"label": "Width <= 1150px (Needs to be optimized later, apply jonas cool sliding effect)"
 				},
 				{
-					"line": 382,
+					"line": 385,
 					"column": 0,
-					"label": "Home"
+					"label": "HOME-SECTION"
+				},
+				{
+					"line": 565,
+					"column": 0,
+					"label": "ABOUT-SECTION"
 				}
 			]
 		}
