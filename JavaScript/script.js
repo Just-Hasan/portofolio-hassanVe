@@ -37,3 +37,36 @@ const shadowHeader = function () {
 };
 
 this.addEventListener("scroll", shadowHeader);
+
+/* ----- SHADOW-HEADER ----- */
+const contactForm = document.getElementById("contact-form");
+const contactMessage = document.getElementById("contact-message");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  // ServiceID - templateID - #form - publicKey
+  emailjs
+    .sendForm(
+      "service_sl5d1jk",
+      "template_tcqe8qm",
+      "#contact-form",
+      "IWAF-J5cLQ9yXqRBC"
+    )
+    .then(
+      () => {
+        contactMessage.textContent = "Message sent successfully ✅";
+
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+
+        contactForm.reset();
+      },
+      () => {
+        contactMessage.textContent = "Message not sent 👀";
+      }
+    );
+};
+
+contactForm.addEventListener("submit", sendEmail);

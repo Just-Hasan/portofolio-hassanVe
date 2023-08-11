@@ -473,7 +473,7 @@
 
               <div class="contact__box contact__area">
                 <textarea
-                  name="user__message"
+                  name="user_message"
                   id="message"
                   class="contact__input"
                   required
@@ -481,6 +481,8 @@
                 ></textarea>
                 <label for="message" class="contact__label">Messsage</label>
               </div>
+
+              <p class="contact__message" id="contact-message"></p>
 
               <button class="contact__button button">
                 <i class="ri-send-plane-line"></i>Send message
@@ -532,6 +534,10 @@
     <script src=""></script>
 
     <!-- E-Mail JS-->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
     <!-- Main JS -->
     <script src="JavaScript/script.js"></script>

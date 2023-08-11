@@ -1024,6 +1024,11 @@ img {
   background-color: var(--first-color);
 }
 
+/* EMAIL-JS */
+.contact__message {
+  color: var(--white-color);
+}
+
 /*=============== FOOTER ===============*/
 
 /*=============== SCROLL BAR ===============*/
