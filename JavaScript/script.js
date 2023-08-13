@@ -70,3 +70,20 @@ const sendEmail = (e) => {
 };
 
 contactForm.addEventListener("submit", sendEmail);
+
+// Smooth scroll
+const allLink = document.querySelectorAll(".nav__link");
+allLink.forEach((navLink) => {
+  navLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const href = navLink.getAttribute("href");
+
+    href === "#" ? window.scrollTo({ top: 0, behavior: "smooth" }) : false;
+
+    const sections = document.querySelector(href);
+    href !== "#" && href.startsWith("#")
+      ? sections.scrollIntoView({ behavior: "smooth" })
+      : false;
+  });
+});
