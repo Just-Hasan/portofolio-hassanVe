@@ -115,7 +115,6 @@ FONT-NAME : Inter*/
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -366,7 +365,7 @@ img {
 }
 
 .nav__link:hover::after {
-  width: 30%;
+  width: 25%;
 }
 
 .nav__close {
@@ -388,6 +387,14 @@ img {
 }
 
 /* Active link */
+.active-link {
+  color: var(--white-color);
+}
+
+.active-link::after {
+  width: 25%;
+  background-color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -1031,13 +1038,79 @@ img {
 }
 
 /*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--black-color);
+}
+.footer__container {
+  padding-block: 3rem 2rem;
+  row-gap: 2.5rem;
+}
 
+.footer__links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.footer__link {
+  color: var(--white-color);
+  transition: color 0.4s ease-in-out;
+}
+
+.footer__link:hover {
+  color: var(--text-color-light);
+}
+
+.footer__copy {
+  color: var(--text-color-light);
+  text-align: center;
+  font-size: var(--small-font-size);
+}
+
+.footer__copy a {
+  color: var(--white-color);
+  font-size: var(--font-medium);
+}
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 65%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 55%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 45%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--black-color);
+  display: inline-flex;
+  font-size: 1.25rem;
+  color: var(--white-color);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0px black;
+  z-index: var(--z-tooltip);
+  transition: all 0.3s ease-in-out;
+}
+
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
 
 /* Show Scroll Up */
-
+.show-scroll {
+  bottom: 5%;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 

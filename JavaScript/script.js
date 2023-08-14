@@ -38,7 +38,7 @@ const shadowHeader = function () {
 
 this.addEventListener("scroll", shadowHeader);
 
-/* ----- SHADOW-HEADER ----- */
+/* ----- E-MAIL JS ----- */
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.getElementById("contact-message");
 
@@ -71,7 +71,7 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener("submit", sendEmail);
 
-// Smooth scroll
+/* ----- SMOOTH SCROLL ----- */
 const allLink = document.querySelectorAll(".nav__link");
 allLink.forEach((navLink) => {
   navLink.addEventListener("click", (e) => {
@@ -87,3 +87,37 @@ allLink.forEach((navLink) => {
       : false;
   });
 });
+
+/* ----- SHOW SCROLL UP ----- */
+const scrollUp = document.getElementById("scroll-up");
+const scrollsUp = () => {
+  window.scrollY >= 350
+    ? scrollUp.classList.add("show-scroll")
+    : scrollUp.classList.remove("show-scroll");
+};
+
+window.addEventListener("scroll", scrollsUp);
+
+/* ----- SCROLL SECTIONS ACTIVE LINK ----- */
+
+// memilih semua sections yang mempunyai attribute ID
+const sections = document.querySelectorAll("section[id]");
+
+const scrollActive = () => {
+  const scrollDown = window.scrollY;
+
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 50,
+      sectionId = current.getAttribute("id"),
+      sectionsClass = document.querySelector(
+        `.nav__menu a[href*=` + sectionId + `]`
+      );
+
+    scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight
+      ? sectionsClass.classList.add("active-link")
+      : sectionsClass.classList.remove("active-link");
+  });
+};
+
+window.addEventListener("scroll", scrollActive);
