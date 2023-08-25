@@ -1,0 +1,68 @@
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color: hsl(14, 80%, 50%);
+  --black-color: hsl(0, 0%, 18%);
+  --black-color-light: hsl(0, 0%, 30%);
+  --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 70%);
+  --body-color: hsl(0, 0%, 8%);
+  --container-color: hsl(0, 0%, 12%);
+}
+
+.dark-theme .home__name {
+  color: #f4f4f4;
+}
+
+.dark-theme .home_description b {
+  background: linear-gradient(90deg, hsl(14, 80%, 50%), hsl(0, 0%, 8%));
+}
+
+.dark-theme .home__shadow {
+  border: 4px solid #f4f4f4;
+}
+
+.dark-theme h2 span {
+  color: #f4f4f4;
+}
+
+.dark-theme .ri-linkedin-box-line {
+  color: #f4f4f4;
+}
+
+.dark-theme .services__title {
+  color: #f4f4f4;
+}
+
+.dark-theme .services__icon i {
+  color: #f4f4f4;
+}
+
+.dark-theme .about__img {
+  position: relative;
+  border: 4px solid var(--white-color);
+  z-index: 1;
+}
+
+.dark-theme .projects__title {
+  color: #f4f4f4;
+}
+
+.dark-theme .projects__card:hover .projects__link i {
+  color: var(--black-color);
+}
+
+.dark-theme .projects__card:hover .projects__title {
+  color: var(--black-color);
+}
+
+.dark-theme .about__description::after {
+  background-color: #f4f4f4;
+}
+
+.dark-theme :is(.home__arrow, .home__line, .about__line) {
+  filter: none;
+}
+
+.dark-theme .home__scroll-text {
+  color: var(--white-color);
+}
