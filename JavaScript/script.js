@@ -200,3 +200,25 @@ footerLink.forEach((link) => {
       : console.log("false");
   });
 });
+
+// Scroll Reveal Animation
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 20,
+  // reset: true // animation repeat
+});
+
+sr.reveal(".home__hasan, .about.__image, .contact__mail, .section__title-2", {
+  origin: "right",
+});
+
+sr.reveal(
+  ".home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data",
+  {
+    origin: "left",
+  }
+);
+
+sr.reveal(".services__card, .projects__card", { interval: 100 });
