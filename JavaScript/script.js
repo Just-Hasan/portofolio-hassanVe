@@ -96,6 +96,13 @@ const scrollsUp = () => {
     : scrollUp.classList.remove("show-scroll");
 };
 
+// Scroll up smooth
+scrollUp.addEventListener("click", (e) => {
+  e.preventDefault();
+  const href = scrollUp.getAttribute("href");
+  href === "#" ? window.scrollTo({ top: 0, behavior: "smooth" }) : false;
+});
+
 window.addEventListener("scroll", scrollsUp);
 
 /* ----- SCROLL SECTIONS ACTIVE LINK ----- */
@@ -159,4 +166,37 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+});
+
+// Implementing other smooth scroll animations
+const aboutMeSection = document.querySelector(".home__scroll");
+const contactSection = document.querySelector(".button");
+
+contactSection.addEventListener("click", (e) => {
+  e.preventDefault();
+  const contactSectionHref = contactSection.getAttribute("href");
+  const contactSectionScroll = document.querySelector(contactSectionHref);
+
+  contactSectionScroll.scrollIntoView({ behavior: "smooth" });
+});
+
+aboutMeSection.addEventListener("click", (e) => {
+  e.preventDefault();
+  const aboutMeHref = aboutMeSection.getAttribute("href");
+  const aboutSection = document.querySelector(aboutMeHref);
+  aboutSection.scrollIntoView({ behavior: "smooth" });
+});
+
+// Footer Links
+
+const footerLink = document.querySelectorAll(".footer__link");
+footerLink.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const footerHref = link.getAttribute("href");
+    const footerLeadsTo = document.querySelector(footerHref);
+    footerLeadsTo
+      ? footerLeadsTo.scrollIntoView({ behavior: "smooth" })
+      : console.log("false");
+  });
 });
