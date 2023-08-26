@@ -210,9 +210,12 @@ const sr = ScrollReveal({
   // reset: true // animation repeat
 });
 
-sr.reveal(".home__hasan, .about.__image, .contact__mail, .section__title-2", {
-  origin: "right",
-});
+sr.reveal(
+  ".home__hasan, .about.__image, .contact__mail, .section__title-2, .contact__title-1",
+  {
+    origin: "right",
+  }
+);
 
 sr.reveal(
   ".home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__social, .contact__data",
