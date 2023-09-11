@@ -129,7 +129,15 @@ const scrollActive = () => {
 
 window.addEventListener("scroll", scrollActive);
 
-/* ----- DARK & LIGHT THEME ----- */
+/*
+----- DARK & LIGHT THEME ----- 
+1. Pilih id tombol untuk mengaktifkan / nonaktifkan dark theme
+2. Buat variable darkTheme, yang berisi string dark-theme, isi variable ini
+   sesuai dengan nama class css yang akan berfungsi untuk indikator perubahan
+   theme.
+3. 
+*/
+
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "ri-sun-line";
