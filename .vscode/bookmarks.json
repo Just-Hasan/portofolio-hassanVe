@@ -84,27 +84,27 @@
 					"label": "Width <= 1150px (Needs to be optimized later, apply jonas cool sliding effect)"
 				},
 				{
-					"line": 409,
+					"line": 410,
 					"column": 0,
 					"label": "HOME-SECTION"
 				},
 				{
-					"line": 591,
+					"line": 592,
 					"column": 0,
 					"label": "ABOUT-SECTION"
 				},
 				{
-					"line": 687,
+					"line": 688,
 					"column": 0,
 					"label": "Services-Section"
 				},
 				{
-					"line": 751,
+					"line": 752,
 					"column": 0,
 					"label": "PROJECTS-SECTION"
 				},
 				{
-					"line": 849,
+					"line": 850,
 					"column": 0,
 					"label": "Contact-Section"
 				}

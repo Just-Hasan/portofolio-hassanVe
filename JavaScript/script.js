@@ -1,3 +1,6 @@
+const navList = document.querySelector(".nav__list");
+const homeSection = document.querySelector(".home");
+
 /* ----- SHOW MENU ----- */
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
@@ -28,17 +31,15 @@ const navLinkCloseNavBar = () => {
 navLink.forEach((link) => link.addEventListener("click", navLinkCloseNavBar));
 
 /* ----- SHADOW-HEADER ----- */
-const shadowHeader = function () {
+this.addEventListener("scroll", function () {
   const header = document.getElementById("header");
 
   window.scrollY >= 50
     ? header.classList.add("shadow-header")
     : header.classList.remove("shadow-header");
-};
+});
 
-this.addEventListener("scroll", shadowHeader);
-
-/* ----- E-MAIL JS ----- */
+/////////////////////////////////////[E-Mail JavaScript]
 const contactForm = document.getElementById("contact-form");
 const contactMessage = document.getElementById("contact-message");
 
@@ -71,39 +72,40 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener("submit", sendEmail);
 
-/* ----- SMOOTH SCROLL ----- */
-const allLink = document.querySelectorAll(".nav__link");
-allLink.forEach((navLink) => {
-  navLink.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const href = navLink.getAttribute("href");
-
-    href === "#" ? window.scrollTo({ top: 0, behavior: "smooth" }) : false;
-
-    const sections = document.querySelector(href);
-    href !== "#" && href.startsWith("#")
-      ? sections.scrollIntoView({ behavior: "smooth" })
-      : false;
-  });
+/////////////////////////////////////[Smooth Scroll]
+navList.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const href = e.target.getAttribute("href");
+    const selectedSection = document.querySelector(href);
+    console.log(selectedSection);
+    selectedSection.scrollIntoView({ behavior: "smooth" });
+  }
 });
 
-/* ----- SHOW SCROLL UP ----- */
-const scrollUp = document.getElementById("scroll-up");
-const scrollsUp = () => {
-  window.scrollY >= 350
-    ? scrollUp.classList.add("show-scroll")
-    : scrollUp.classList.remove("show-scroll");
+/////////////////////////////////////[Show Scroll Up]
+const homeCallback = function (entries) {
+  const [entry] = entries;
+  const scrollToHome = document.querySelector("#scroll-up");
+  if (entry.isIntersecting) {
+    scrollToHome.classList.remove("show-scroll");
+    scrollToHome.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  } else {
+    scrollToHome.classList.add("show-scroll");
+  }
 };
 
-// Scroll up smooth
-scrollUp.addEventListener("click", (e) => {
-  e.preventDefault();
-  const href = scrollUp.getAttribute("href");
-  href === "#" ? window.scrollTo({ top: 0, behavior: "smooth" }) : false;
-});
+const homeOptions = {
+  root: null,
+  threshold: 0,
+};
 
-window.addEventListener("scroll", scrollsUp);
+const observer = new IntersectionObserver(homeCallback, homeOptions);
+
+observer.observe(homeSection);
 
 /* ----- SCROLL SECTIONS ACTIVE LINK ----- */
 
