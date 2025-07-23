@@ -674,6 +674,9 @@ img {
 
 .about__list {
   list-style: square;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   color: var(--title-color);
   margin-bottom: 3rem;
 }
