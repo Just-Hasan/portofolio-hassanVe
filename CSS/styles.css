@@ -1134,3 +1134,15 @@ img {
 /* For medium devices */
 
 /* For large devices */
+
+.scroll_down_download_cv_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  row-gap: 12px;
+}
+
+.ri-download-fill{
+  font-size: 24px;
+}
